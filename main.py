@@ -4,16 +4,18 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
 from hash import create_hash
-from database import Articles
+from database import Database
 from md import md2html
 
 
 import logging
+import os
 from logging_config import config
 
 config
-
+LINK = os.getenv('DATABASE_URL')
 app = FastAPI()
+db = Database(LINK)
 templates = Jinja2Templates(directory='src/templates')
 app.mount('/static', StaticFiles(directory='src/static'), name='static')
 
@@ -24,8 +26,7 @@ async def start(request : Request):
 
 @app.get('/{link}', response_class=HTMLResponse)
 async def start1(request: Request, link: str):
-    articles = Articles()
-    linkk = articles.select_data_check(hash=link)
+    linkk = db.select_data(hash=link)
     if linkk != None:
         text = md2html(linkk[1])
         return templates.TemplateResponse(request, 'text.html', context={'text': text, "link": linkk[0]})
@@ -34,9 +35,9 @@ async def start1(request: Request, link: str):
 
 @app.post('/{link}')
 async def post(text: str = Form(...), link: str = str):
-    articles = Articles()
+    db = Database(LINK)
     
-    articles.insert_data(hash=link, text=text)
+    db.insert_data(hash=link, text=text)
     return RedirectResponse(f'/{link}', status_code=302)
     
 

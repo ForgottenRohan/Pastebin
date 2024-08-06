@@ -29,6 +29,8 @@
     overflow: hidden; /* Скрыть прокрутку */
     white-space: pre-wrap; /* Учитывать переносы строк */
     box-sizing: border-box; /* Учитывать паддинг и границы в общей ширине */
+    align-items: center;
+    justify-content: center;
 }
 body {
     margin: 0;

@@ -1,0 +1,28 @@
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1337
+      POSTGRES_DB: articles
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  app:
+    image: forgottenrohan/pastebin:0.0.1 
+    container_name: fastapi
+    environment:
+      DATABASE_URL: postgresql://postgres:1337@db:5432/articles
+    ports:
+      - "8000:8000"  # Порт вашего приложения
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  postgres_data:
