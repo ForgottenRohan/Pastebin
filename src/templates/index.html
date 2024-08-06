@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block text %}
+<form method="post" action="">
+    <textarea name="text" class="input-area" placeholder="Введите текст..." oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"></textarea>
+    <button class="save-button" type="submit">Сохранить</button>
+</form>
+{% endblock %}

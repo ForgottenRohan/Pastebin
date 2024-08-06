@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastebin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADx0lEQVR4nO2bW4hOURTHfwzGuIZxn0m5PShK8eCB8IISjUuIoowwE/MikyeX8jgvFI+EEIrGJZc8MKOQW+JFITE0qDGjwWAc7fqfOmka3z7ft88588351Wlezl5r7//Ze+211/4GUlJSUlJScsVQYD1wFngBNAOexfMVeA/cAg4Da4ERdAEmatA/LQecyfMbuAosBXqSMAqBGqBNnf0BXAE2ATOBMUCBhb0BQCkwD9gBXJZNX4znwCISwjCgTh37BRxyNF2HANuAlwEhzmi5xcYorXFPHZsagc/eQBXwRX7fANMi8NthR26rE3djCFLjgHr5bwFmR+yfGjl/rWUQV+w5HhDBxJtImKyobALTdOLF7AhHJUIDMDoKp8fl8ADJoBdwU30yf3u4dFaqr/8dGEtyMDHoo0QwSZgztsvJeZLHOvXtLVDkysk5OakgeZip/1D92+zKyQs5CLvn3+kk1TVB7AZQqWwwDKtl7wmOaJUDk96GIdPc/wOwMoT9PsBn2TC7Vc75JeNhv5A/wH8pkKirdAo07/wBqrPYpUzGmHOaZHxYjgX4ly06VRoRVlj62CgfJ3DAfRmf5VgAXwRPtYH+Fj5muIwDJ2S8PAIBCJw3bHadkWrTiAPKZfx6RAL4Uf2aZSD0tIRyzmDgm7atkggEGKv331m0KVIbk63ichkci0CAwkCVySYt9rQdOjuLtypCm7KVSwFKQswAPwg+wiG7AoFmkkMB1oSIAf42eBrHR9BaOXoFTHAkgF9v3GrR5ojamIObU/oFcntToyvLsQAVIfIA82E+qd0UImCgppo/sEtag9kKUKG028SZ5Rb9WSr7z4iYysAN0B9ljLuBOcD4wPm8s7NAidZ8fcDOTst++EvGlNAjZyiwXwXKbG+C3lt+ecMStf1kmTpnRZ2eIH2BhcBBxYhXSp7+d/XVoOuvrSEGMEh+bANm1thGddv3M60EnZTdewqE3UqAPbLZrAtaupMAe2XP7BgLiAEvJgFMRepU4NRnTo10FwEW60rOU4XKBFzyXYBe2ub8HMEPeJmm4F1KgD5AsS47N+jurzHQtlGJVyJ+KeLlQAA/e/vf81SV3siSnLgEaFMx47HOGVVRHWy64jYYO14qAOkM8BzOmMTjpTOAdAZ4DmdM4mmxuC4fFDi25g2PNai5Gbw7X++an7HkDfs0qAsZvHtR75oCRt4wPFANrs7gJqkpxl+WOmMZ0K4B1uq+cICe+YEv3666fV5SFvgFd0dPUz4P3qdYNbqH+rcXs0M80JrPu2mfkpKSkkKe8Bd2cqvu5WsH8AAAAABJRU5ErkJggg==" class="logo">
+
+            <h1>PASTEBIN</h1>
+        </div>
+        {% block text %}
+            
+        {% endblock %}
+    </div>
+    <script src="{{ url_for('static', path='/js/script.js')}}" defer></script>
+</body>
+</html>

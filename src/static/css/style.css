@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+.input-area {
+    width: 100%;
+    min-height: 100px; /* Минимальная высота */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none; /* Запрет на изменение размера вручную */
+    overflow: hidden; /* Скрыть прокрутку */
+    white-space: pre-wrap; /* Учитывать переносы строк */
+    box-sizing: border-box; /* Учитывать паддинг и границы в общей ширине */
+}
+.textarea{
+    min-width: 100px;
+    width: auto;
+    max-width: max-content;
+    min-height: 100px; /* Минимальная высота */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none; /* Запрет на изменение размера вручную */
+    overflow: hidden; /* Скрыть прокрутку */
+    white-space: pre-wrap; /* Учитывать переносы строк */
+    box-sizing: border-box; /* Учитывать паддинг и границы в общей ширине */
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-color: #f4f4f4;
+}
+.link {
+    resize: none; /* Запретить изменение размера */
+    overflow: hidden; /* Скрыть прокрутку */
+    white-space: nowrap; /* Запретить перенос текста на следующую строку */
+    min-width: 250px; /* Минимальная ширина для стандартной ссылки */
+    height: auto; /* Высота будет автоматически изменяться */
+    font-family: monospace; /* Шрифт фиксированной ширины для лучшей читаемости ссылок */
+    border: 1px solid #ccc; /* Граница для текстового поля */
+    padding: 5px; /* Отступы внутри текстового поля */
+    box-sizing: border-box; /* Учитывать отступы и рамки в ширине */
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px; /* Ваше значение для размера логотипа */
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Цвет кнопки */
+    color: white;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
+}
+.text-link {
+    margin: 5px 0; /* Отступы для надписи */
+    font-weight: bold; /* Выделение текста */
+}

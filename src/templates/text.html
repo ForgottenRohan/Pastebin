@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block text %}
+<div class="textarea">
+    {{text|safe}}
+</div>
+
+<p class="text-link">Ссылка на заметку:</p>
+<textarea class="link" rows="1" onfocus="selectText(this)" onmouseup="copyText(this)"  readonly>http://127.0.0.1:8000/{{link}}</textarea>
+    
+{% endblock %}
