@@ -1,21 +1,36 @@
 
 services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: "nginx"
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+    networks:
+      - net
+
   db:
     image: postgres:latest
-    container_name: postgres_db
+    container_name: "db"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1337
       POSTGRES_DB: articles
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
+    networks:
+      - net
 
   app:
-    image: forgottenrohan/pastebin:0.0.1 
-    container_name: fastapi
+    build: 
+      context: .
+    container_name: "app"
     environment:
       DATABASE_URL: postgresql://postgres:1337@db:5432/articles
     ports:
@@ -23,6 +38,11 @@ services:
     depends_on:
       - db
     restart: always
+    networks:
+      - net
 
 volumes:
   postgres_data:
+
+networks:
+  net:
