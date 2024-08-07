@@ -6,11 +6,10 @@ from fastapi.staticfiles import StaticFiles
 from hash import create_hash
 from database import Database
 from md import md2html
-
-
-import logging
-import os
 from logging_config import config
+
+import os
+
 
 config
 LINK = os.getenv('DATABASE_URL')

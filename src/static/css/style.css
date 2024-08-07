@@ -17,20 +17,12 @@
 }
 .textarea{
     min-width: 100px;
-    width: auto;
-    max-width: max-content;
     min-height: 100px; /* Минимальная высота */
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 10px;
-    resize: none; /* Запрет на изменение размера вручную */
-    overflow: hidden; /* Скрыть прокрутку */
-    white-space: pre-wrap; /* Учитывать переносы строк */
-    box-sizing: border-box; /* Учитывать паддинг и границы в общей ширине */
-    align-items: center;
-    justify-content: center;
+    text-align: left;
 }
 body {
     margin: 0;
@@ -39,6 +31,11 @@ body {
     align-items: center;
     margin-top: 100px;
     background-color: #f4f4f4;
+}
+.link-logo {
+    text-decoration: none;
+    color: #45a049;
+    display: grid;
 }
 .link {
     resize: none; /* Запретить изменение размера */
